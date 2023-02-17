@@ -4,7 +4,7 @@ const temp=document.getElementById("temp");
 const mintTemp=document.getElementById("min-temp");
 const maxTemp=document.getElementById("max-temp");
 const city=document.getElementById('city-input');
-const btnEl=document.getElementById('btn')
+const btnEl=document.getElementById('btn');
 
 btnEl.addEventListener('click',()=>{
 getWeatherData(city.value);
@@ -24,7 +24,7 @@ fetch(
   options
 )
   .then((response) => response.json())
-  .then((data) => {console.log(data);
+  .then((data) => {
     cityName.innerText = data.location.city;
     weatherType.innerText = data.current_observation.condition.text;
     temp.innerText = data.current_observation.condition.temperature;
